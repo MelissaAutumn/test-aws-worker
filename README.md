@@ -1,6 +1,16 @@
 # AWS Worker for automated environment deployment
 
+## Requires
+ - NodeJS
+ - Python3
+ - AWS CLI: https://aws.amazon.com/cli/
+ - CDK CLI: https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install
+ - IAM AWS user with AdministratorAccess
+
 ## Commands
+
+You'll need to bootstrap it first:
+`CDK_NEW_BOOTSTRAP=1 cdk bootstrap --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess`
 
 Deploy all stacks with:
 `cdk deploy --require-approval never --outputs-file cdk.out.json`
